@@ -79,11 +79,11 @@ public class TextActivity extends AppCompatActivity {
         speedBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 // TODO Auto-generated method stub
-                Toast.makeText(getApplicationContext(), String.valueOf(progress),Toast.LENGTH_LONG).show();
-                speedView.setText(String.valueOf(progress));
-                speed = progress;
+                int currentProgress = progress + 2;
+                speedView.setText(String.valueOf(currentProgress));
+                speed = currentProgress;
             }
 
             @Override
@@ -103,12 +103,17 @@ public class TextActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String textFieldContent = textField.getText().toString().toLowerCase();
                 List<String> textList = new ArrayList<String>();
+                String currentSelectedSpeed = speed.toString();
+                if ("10".equals(currentSelectedSpeed)) {
+                    currentSelectedSpeed = "0";
+                }
 
                 for (char letter: textFieldContent.toCharArray()) {
+                    // textList.add(LetterEnum.fromKey(letter).getValue() + currentSelectedSpeed);
                     textList.add(LetterEnum.fromKey(letter).getValue());
                 }
 
-                System.out.println(speed);
+                System.out.println("Velocidade:" + currentSelectedSpeed);
 
                 try {
                     for (String letra : textList) {
