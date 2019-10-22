@@ -45,7 +45,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center"
-        android:text="Não encontramos enhuma BlueBOX pareada."
+        android:text="Não encontramos nenhuma BlueBOX pareada."
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
